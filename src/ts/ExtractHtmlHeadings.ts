@@ -30,7 +30,7 @@ export default class ExtractHtmlHeadings implements IScenario {
         name: 'UpdateResourcePlugin',
       },
       {
-        name: 'InsertResourcePlugin',
+        name: 'InsertResourcesPlugin',
       },
     ];
 
