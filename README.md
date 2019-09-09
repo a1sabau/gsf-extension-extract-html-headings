@@ -1,10 +1,12 @@
-# extract-html-headings
+# gsf-extension-extract-html-headings
 
-## Example scenario for get-set, Fetch! browser extension
+[![Build Status](https://travis-ci.org/a1sabau/gsf-extension-extract-html-headings.svg?branch=master)](https://travis-ci.org/a1sabau/gsf-extension-extract-html-headings/)
 
-Extract Html Headings scenario is used for scraping H1, H2, H3, H4, H5, H6 text content.
+Extracts html headings (H1 - H6) content.
 
-Selects H1, H2, H3, H4, H5, H6 html headings via document.querySelectorAll. Scraping stores their text representation as innerText.
-Defines a new scraping plugin - ExtractHeadingsPlugin.
+Headings are selected via document.querySelectorAll and their text representation is stored as innerText.
+Defines a new scraping plugin: ExtractHeadingsPlugin.
 
-This bare-bone scraping project can be used as a basis for more advanced [get-set-fetch-extension](https://github.com/get-set-fetch/extension) scenarios.
+This crawl scenario can be installed in the get-set-fetch browser extension.
+
+More details, together with a list of all available scenarios, can be found at  [get-set-fetch-extension](https://github.com/get-set-fetch/extension) main page.
