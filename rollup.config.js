@@ -10,12 +10,12 @@ export default {
   },
   plugins: [
     typescript(),
-    commonjs({extensions: ['.js', '.ts']}) ,
+    commonjs({ extensions: [ '.js', '.ts' ] }),
     resolve({
       browser: true,
       preferBuiltins: true,
-      extensions: ['.js', '.json', '.ts', '.tsx'],
+      extensions: [ '.js', '.json', '.ts', '.tsx' ],
       jsnext: false,
-    })
+    }),
   ],
-}
+};

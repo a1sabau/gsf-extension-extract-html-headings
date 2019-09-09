@@ -3,7 +3,10 @@
         "target": "esnext",
         "strict": false,
         "moduleResolution": "node",
-        "module": "esnext",
+        "module": "commonjs",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop":true
     },
     "newLine": "LF"
 }
