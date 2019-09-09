@@ -1,0 +1,21 @@
+{
+	"name": "gsf-extension-extract-html-headings",
+	"version": "0.1.0",
+	"description": "Extract html headings (H1 - H6) content.",
+  "homepage": "https://github.com/a1sabau/gsf-extension-extract-html-headings",
+  "main": "dist/ExtractHtmlHeadings.js",
+  "files": [
+    "dist"
+  ],
+	"license": "MIT",
+	"author": {
+    "name": "Andrei Sabau"
+  },
+	"dist": {
+		"integrity": "sha512-Z3XfEJtjC+FJ68XhrcmlV4furGljj7vo61YGEJJnBWIXIB3j5jXA6ocpSMTIlshF13oT2Nj6+ujqYjWeZwmj/Q==",
+		"shasum": "babcbeabcddae752796fb3f30beae09757d2dd7b",
+		"tarball": "https://registry.npmjs.org/gsf-extension-extract-html-headings/-/gsf-extension-extract-html-headings-0.1.0.tgz",
+		"fileCount": 11,
+		"unpackedSize": 11280
+	}
+}
