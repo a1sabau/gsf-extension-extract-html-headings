@@ -1,43 +1,41 @@
-import { SchemaHelper, IPlugin, ISite, IResource } from 'get-set-fetch-extension-commons';
+import { ISite, IResource, BasePlugin, IEnhancedJSONSchema } from 'get-set-fetch-extension-commons';
 
-export default class ExtractHeadingsPlugin implements IPlugin {
-  opts: {
-    runInTab: boolean;
-    selectors: string;
-  };
-
-  constructor(opts) {
-    this.opts = SchemaHelper.instantiate(ExtractHeadingsPlugin.OPTS_SCHEMA, opts);
-  }
-
-  static get OPTS_SCHEMA() {
+export default class ExtractHeadingsPlugin extends BasePlugin {
+  getOptsSchema(): IEnhancedJSONSchema {
     return {
       $id: 'a1sabau/extract-html-headings.schema.json',
       $schema: 'http://json-schema.org/draft-07/schema#',
       title: 'ExtractHeadingsPlugin',
       type: 'object',
       properties: {
-        runInTab: {
+        domRead: {
           type: 'boolean',
-          default: true,
+          const: true,
         },
       },
     };
   }
 
-  test(resource: IResource) {
+  test(site: ISite, resource: IResource) {
     return (/html/i).test(resource.mediaType);
   }
 
   apply(site: ISite, resource: IResource) {
-    const headings = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ].reduce((headings, selector) => headings.concat(
-      Array.from(document.querySelectorAll(selector)).map(heading => (heading as HTMLHeadingElement).innerText),
-    ), []);
+    const content = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' ].reduce(
+      (content, selector) => {
+        const txtVals: string[] = Array.from(document.querySelectorAll(selector)).map(heading => (heading as HTMLHeadingElement).innerText);
+
+        if (txtVals.length > 0) {
+          return Object.assign(content, { [selector]: txtVals });
+        }
+
+        return content;
+      },
+      {}
+    );
 
     return {
-      info: {
-        content: headings,
-      },
+      content,
     };
   }
 }
