@@ -1,6 +1,6 @@
 {
   "name": "gsf-extension-extract-html-headings",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Extract html headings (H1 - H6) content.",
   "homepage": "https://github.com/a1sabau/gsf-extension-extract-html-headings",
   "main": "dist/ExtractHtmlHeadings.js",
